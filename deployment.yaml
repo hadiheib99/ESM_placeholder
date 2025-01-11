@@ -1,0 +1,20 @@
+# deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: esm-placeholder-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: esm-placeholder
+  template:
+    metadata:
+      labels:
+        app: esm-placeholder
+    spec:
+      containers:
+      - name: esm-placeholder
+        image: esm-placeholder:latest
+        ports:
+        - containerPort: 8080
